@@ -243,7 +243,6 @@ typeEffect();
 
 
 // Search button 🔍 functionality
-<script>
   function performSearch() {
     const query = document.getElementById('searchInput').value.trim();
     if (query) {
@@ -259,4 +258,3 @@ typeEffect();
       performSearch();
     }
   });
-</script>
