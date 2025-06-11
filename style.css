@@ -793,130 +793,86 @@
         }
 
 
-/* ===========================
-   🌐 Base Footer Styles
-   =========================== */
 
-.footer-container {
-    max-width: 1200px;
-    width: 100%;
-    margin: 0 auto;
-    padding: 0 30px;
-}
+        /* Footer */
 
-footer {
-    background-color: var(--text-color);
-    color: var(--white);
-    padding: 60px 0 20px;
-    width: 100%;
-}
 
-.footer-content {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 40px;
-    margin-bottom: 40px;
-}
 
-.footer-column h3 {
-    color: var(--white);
-    margin-bottom: 1.5rem;
-    font-size: 1.2rem;
-}
+       .footer-container {
+            max-width: 1200px;     /* Prevents stretching on large screens */
+            width: 100%;           /* Responsive width */
+            margin: 0 auto;        /* Centers on screen */
+            padding: 0 30px;       /* Adds side space for mobile */
+        }
+        
+        
+        footer {
+            background-color: var(--text-color);
+            color: var(--white);
+            padding: 60px 0 20px;
+            width: 100%;
+        }
 
-.footer-links {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
 
-.footer-links li {
-    margin-bottom: 0.8rem;
-}
+        .footer-column h3 {
+            color: var(--white);
+            margin-bottom: 1.5rem;
+            font-size: 1.2rem;
+        }
 
-.footer-links a {
-    color: var(--gray);
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
+        .footer-links {
+            list-style: none;
+        }
 
-.footer-links a:hover {
-    color: var(--white);
-}
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
 
-.social-links {
-    display: flex;
-    gap: 15px;
-    margin-top: 10px;
-}
+        .footer-links a {
+            color: var(--gray);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
 
-.social-links a {
-    color: var(--white);
-    font-size: 1.2rem;
-    transition: color 0.3s ease;
-}
+        .footer-links a:hover {
+            color: var(--white);
+        }
 
-.social-links a:hover {
-    color: var(--accent-color);
-}
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
 
-.copyright {
-    text-align: center;
-    padding-top: 20px;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    color: var(--gray);
-    font-size: 0.9rem;
-}
+        .social-links a {
+            color: var(--white);
+            font-size: 1.2rem;
+            transition: color 0.3s ease;
+        }
 
-/* ===========================
-   🟡 Tablet (769px–1024px)
-   =========================== */
-@media (max-width: 1024px) {
-    .footer-content {
-        gap: 30px;
-    }
+        .social-links a:hover {
+            color: var(--accent-color);
+        }
 
-    .footer-column h3 {
-        font-size: 1.1rem;
-    }
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
 
-    .footer-container {
-        padding: 0 25px;
-    }
-
-    .social-links {
-        gap: 12px;
-    }
-}
-
-/* ===========================
-   🔴 Mobile (≤ 768px)
-   =========================== */
 @media (max-width: 768px) {
-    .footer-content {
-        grid-template-columns: 1fr; /* Stack all columns vertically */
-        gap: 20px;
-    }
+  .footer-content {
+    gap: 20px;
+  }
 
-    .footer-column h3 {
-        font-size: 1rem;
-    }
-
-    .footer-links li {
-        margin-bottom: 0.5rem;
-    }
-
-    .footer-container {
-        padding: 0 15px;
-    }
-
-    .social-links {
-        justify-content: center;
-        gap: 10px;
-    }
-
-    .copyright {
-        font-size: 0.8rem;
-        padding-top: 15px;
-    }
+  .footer-column h3 {
+    font-size: 1rem;
+  }
 }
