@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Not Found - 404</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: #0a0a0a;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Structural Grid Background */
+        .grid-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(rgba(0, 255, 255, 0.1) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 255, 255, 0.1) 1px, transparent 1px),
+                linear-gradient(rgba(255, 0, 255, 0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 0, 255, 0.05) 1px, transparent 1px);
+            background-size: 
+                100px 100px,
+                100px 100px,
+                20px 20px,
+                20px 20px;
+            animation: gridMove 20s linear infinite;
+        }
+
+        @keyframes gridMove {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(100px, 100px); }
+        }
+
+        /* Structural Beams */
+        .structural-beams {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .beam {
+            position: absolute;
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1);
+            opacity: 0.3;
+            animation: beamGlow 3s ease-in-out infinite alternate;
+        }
+
+        .beam:nth-child(1) {
+            width: 4px;
+            height: 200%;
+            left: 20%;
+            transform: rotate(15deg);
+            animation-delay: 0s;
+        }
+
+        .beam:nth-child(2) {
+            width: 6px;
+            height: 150%;
+            right: 25%;
+            transform: rotate(-20deg);
+            animation-delay: 1s;
+        }
+
+        .beam:nth-child(3) {
+            width: 200%;
+            height: 3px;
+            top: 30%;
+            transform: rotate(10deg);
+            animation-delay: 2s;
+        }
+
+        .beam:nth-child(4) {
+            width: 180%;
+            height: 5px;
+            bottom: 25%;
+            transform: rotate(-8deg);
+            animation-delay: 0.5s;
+        }
+
+        @keyframes beamGlow {
+            0% { opacity: 0.2; filter: blur(2px); }
+            100% { opacity: 0.6; filter: blur(0px); }
+        }
+
+        /* Floating Geometric Shapes */
+        .geometry {
+            position: absolute;
+            border: 2px solid;
+            border-color: #ff6b6b;
+            animation: geometryFloat 8s ease-in-out infinite;
+        }
+
+        .geometry:nth-child(1) {
+            width: 80px;
+            height: 80px;
+            left: 10%;
+            top: 20%;
+            border-color: #ff6b6b;
+            animation-delay: 0s;
+        }
+
+        .geometry:nth-child(2) {
+            width: 60px;
+            height: 60px;
+            right: 15%;
+            top: 60%;
+            border-color: #4ecdc4;
+            border-radius: 50%;
+            animation-delay: 2s;
+        }
+
+        .geometry:nth-child(3) {
+            width: 40px;
+            height: 40px;
+            left: 70%;
+            bottom: 30%;
+            border-color: #45b7d1;
+            transform: rotate(45deg);
+            animation-delay: 4s;
+        }
+
+        @keyframes geometryFloat {
+            0%, 100% { transform: translateY(0px) rotate(0deg); opacity: 0.4; }
+            50% { transform: translateY(-30px) rotate(180deg); opacity: 0.8; }
+        }
+
+        .container {
+            text-align: center;
+            color: white;
+            z-index: 10;
+            position: relative;
+            max-width: 600px;
+            padding: 2rem;
+        }
+
+        /* Advanced Robot Design */
+        .robot-container {
+            position: relative;
+            margin: 2rem 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: slideUp 1s ease-out 1.1s forwards;
+        }
+
+        .robot {
+            position: relative;
+            width: 160px;
+            height: 180px;
+            animation: robotHover 3s ease-in-out infinite;
+        }
+
+        /* Robot Core/Chest */
+        .robot-core {
+            width: 100px;
+            height: 80px;
+            background: linear-gradient(135deg, #2c3e50, #34495e);
+            border-radius: 20px;
+            position: relative;
+            margin: 0 auto;
+            box-shadow: 
+                0 0 30px rgba(52, 152, 219, 0.3),
+                inset 0 4px 8px rgba(255, 255, 255, 0.1);
+            border: 2px solid rgba(52, 152, 219, 0.5);
+        }
+
+        /* Robot Screen */
+        .robot-screen {
+            width: 60px;
+            height: 40px;
+            background: #000;
+            border-radius: 8px;
+            position: absolute;
+            top: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            border: 2px solid #3498db;
+            overflow: hidden;
+        }
+
+        .screen-content {
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, #00ff00, #00ffff);
+            animation: screenScan 2s linear infinite;
+        }
+
+        @keyframes screenScan {
+            0% { top: 0; opacity: 1; }
+            100% { top: 100%; opacity: 0.3; }
+        }
+
+        /* Robot Head Dome */
+        .robot-head {
+            width: 80px;
+            height: 40px;
+            background: linear-gradient(135deg, #ecf0f1, #bdc3c7);
+            border-radius: 40px 40px 0 0;
+            position: absolute;
+            top: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            box-shadow: 0 0 20px rgba(52, 152, 219, 0.2);
+        }
+
+        /* Robot Sensors */
+        .robot-sensor {
+            width: 8px;
+            height: 8px;
+            background: #e74c3c;
+            border-radius: 50%;
+            position: absolute;
+            top: 15px;
+            animation: sensorPulse 1.5s ease-in-out infinite;
+            box-shadow: 0 0 10px #e74c3c;
+        }
+
+        .robot-sensor.left { left: 20px; }
+        .robot-sensor.right { right: 20px; animation-delay: 0.5s; }
+
+        @keyframes sensorPulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(1.3); }
+        }
+
+        /* Robot Shoulders */
+        .robot-shoulder {
+            width: 25px;
+            height: 35px;
+            background: linear-gradient(135deg, #34495e, #2c3e50);
+            border-radius: 12px;
+            position: absolute;
+            top: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .robot-shoulder.left { left: -30px; }
+        .robot-shoulder.right { right: -30px; }
+
+        /* Robot Arms */
+        .robot-arm {
+            width: 15px;
+            height: 50px;
+            background: linear-gradient(135deg, #95a5a6, #7f8c8d);
+            border-radius: 8px;
+            position: absolute;
+            top: 45px;
+            animation: armMove 2s ease-in-out infinite;
+            transform-origin: top center;
+        }
+
+        .robot-arm.left {
+            left: -22px;
+            animation-delay: 0s;
+        }
+
+        .robot-arm.right {
+            right: -22px;
+            animation-delay: 1s;
+        }
+
+        @keyframes armMove {
+            0%, 100% { transform: rotate(-15deg); }
+            50% { transform: rotate(15deg); }
+        }
+
+        /* Robot Hands */
+        .robot-hand {
+            width: 20px;
+            height: 12px;
+            background: linear-gradient(135deg, #e67e22, #d35400);
+            border-radius: 6px;
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Robot Base/Legs */
+        .robot-base {
+            width: 120px;
+            height: 40px;
+            background: linear-gradient(135deg, #2c3e50, #34495e);
+            border-radius: 20px;
+            position: absolute;
+            bottom: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+        }
+
+        /* Robot Thrusters */
+        .robot-thruster {
+            width: 12px;
+            height: 20px;
+            background: linear-gradient(135deg, #f39c12, #e67e22);
+            border-radius: 0 0 6px 6px;
+            position: absolute;
+            bottom: -15px;
+            animation: thrusterGlow 1s ease-in-out infinite alternate;
+        }
+
+        .robot-thruster.left { left: 25px; }
+        .robot-thruster.center { left: 50%; transform: translateX(-50%); }
+        .robot-thruster.right { right: 25px; }
+
+        @keyframes thrusterGlow {
+            0% { 
+                background: linear-gradient(135deg, #f39c12, #e67e22);
+                box-shadow: 0 0 10px #f39c12;
+            }
+            100% { 
+                background: linear-gradient(135deg, #e74c3c, #c0392b);
+                box-shadow: 0 0 20px #e74c3c;
+            }
+        }
+
+        /* Robot Hover Animation */
+        @keyframes robotHover {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-15px) rotate(2deg); }
+        }
+
+        /* Energy Field */
+        .energy-field {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            border: 2px solid rgba(52, 152, 219, 0.3);
+            border-radius: 50%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            animation: energyPulse 4s ease-in-out infinite;
+        }
+
+        @keyframes energyPulse {
+            0%, 100% { 
+                transform: translate(-50%, -50%) scale(1);
+                opacity: 0.3;
+            }
+            50% { 
+                transform: translate(-50%, -50%) scale(1.2);
+                opacity: 0.1;
+            }
+        }
+
+        .error-code {
+            font-size: clamp(8rem, 15vw, 12rem);
+            font-weight: 900;
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1, #96ceb4);
+            background-size: 300% 300%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: gradientShift 3s ease-in-out infinite;
+            line-height: 1;
+            margin-bottom: 1rem;
+            text-shadow: 0 0 30px rgba(255, 255, 255, 0.3);
+        }
+
+        @keyframes gradientShift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        .error-title {
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 700;
+            margin-bottom: 1rem;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: slideUp 0.8s ease-out 0.5s forwards;
+        }
+
+        .error-message {
+            font-size: 1.2rem;
+            font-weight: 300;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            line-height: 1.6;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: slideUp 0.8s ease-out 0.7s forwards;
+        }
+
+        @keyframes slideUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: slideUp 0.8s ease-out 0.9s forwards;
+        }
+
+        .btn {
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-primary {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            border: 2px solid rgba(52, 152, 219, 0.5);
+            backdrop-filter: blur(10px);
+        }
+
+        .btn-primary:hover {
+            background: rgba(52, 152, 219, 0.3);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(52, 152, 219, 0.3);
+        }
+
+        .btn-secondary {
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+            color: white;
+            border: none;
+        }
+
+        .btn-secondary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+            filter: brightness(1.1);
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .btn:hover::before {
+            left: 100%;
+        }
+
+        /* Floating animation for the entire container */
+        .container {
+            animation: containerFloat 4s ease-in-out infinite;
+        }
+
+        @keyframes containerFloat {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+            
+            .buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn {
+                width: 100%;
+                max-width: 250px;
+            }
+
+            .robot {
+                width: 120px;
+                height: 140px;
+            }
+
+            .robot-core {
+                width: 80px;
+                height: 60px;
+            }
+        }
+
+        /* Interactive cursor effect */
+        .cursor-glow {
+            position: fixed;
+            width: 20px;
+            height: 20px;
+            background: radial-gradient(circle, rgba(52, 152, 219, 0.5), transparent);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 9999;
+            transition: transform 0.1s ease;
+        }
+    </style>
+</head>
+<body>
+    <div class="grid-background"></div>
+    
+    <div class="structural-beams">
+        <div class="beam"></div>
+        <div class="beam"></div>
+        <div class="beam"></div>
+        <div class="beam"></div>
+    </div>
+
+    <div class="geometry"></div>
+    <div class="geometry"></div>
+    <div class="geometry"></div>
+
+    <div class="cursor-glow" id="cursorGlow"></div>
+
+    <div class="container">
+        <div class="error-code">404</div>
+        <h1 class="error-title">System Navigation Error</h1>
+        <p class="error-message">
+            The requested data path could not be located in our digital infrastructure. 
+            Our autonomous unit is standing by for your next command.
+        </p>
+        
+        <div class="robot-container">
+            <div class="energy-field"></div>
+            <div class="robot">
+                <div class="robot-head">
+                    <div class="robot-sensor left"></div>
+                    <div class="robot-sensor right"></div>
+                </div>
+                <div class="robot-core">
+                    <div class="robot-screen">
+                        <div class="screen-content"></div>
+                    </div>
+                </div>
+                <div class="robot-shoulder left"></div>
+                <div class="robot-shoulder right"></div>
+                <div class="robot-arm left">
+                    <div class="robot-hand"></div>
+                </div>
+                <div class="robot-arm right">
+                    <div class="robot-hand"></div>
+                </div>
+                <div class="robot-base">
+                    <div class="robot-thruster left"></div>
+                    <div class="robot-thruster center"></div>
+                    <div class="robot-thruster right"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="buttons">
+            <a href="/" class="btn btn-primary">Return to Base</a>
+            <a href="/search" class="btn btn-secondary">Initiate Search</a>
+        </div>
+    </div>
+
+    <script>
+        // Cursor glow effect
+        const cursorGlow = document.getElementById('cursorGlow');
+        
+        document.addEventListener('mousemove', (e) => {
+            cursorGlow.style.left = e.clientX - 10 + 'px';
+            cursorGlow.style.top = e.clientY - 10 + 'px';
+        });
+
+        // Interactive click effects
+        document.addEventListener('click', (e) => {
+            createClickEffect(e.clientX, e.clientY);
+        });
+
+        function createClickEffect(x, y) {
+            const effect = document.createElement('div');
+            effect.style.position = 'fixed';
+            effect.style.left = x + 'px';
+            effect.style.top = y + 'px';
+            effect.style.width = '4px';
+            effect.style.height = '4px';
+            effect.style.background = '#3498db';
+            effect.style.borderRadius = '50%';
+            effect.style.pointerEvents = 'none';
+            effect.style.zIndex = '1000';
+            effect.style.animation = 'clickRipple 0.6s ease-out forwards';
+            
+            document.body.appendChild(effect);
+            
+            setTimeout(() => {
+                if (document.body.contains(effect)) {
+                    document.body.removeChild(effect);
+                }
+            }, 600);
+        }
+
+        // Add click ripple animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes clickRipple {
+                0% {
+                    transform: scale(1);
+                    opacity: 1;
+                }
+                100% {
+                    transform: scale(15);
+                    opacity: 0;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+
+        // Robot interaction on hover
+        const robot = document.querySelector('.robot');
+        robot.addEventListener('mouseenter', () => {
+            robot.style.animationDuration = '1s';
+        });
+
+        robot.addEventListener('mouseleave', () => {
+            robot.style.animationDuration = '3s';
+        });
+
+        // Dynamic grid movement on mouse move
+        document.addEventListener('mousemove', (e) => {
+            const gridBg = document.querySelector('.grid-background');
+            const x = (e.clientX / window.innerWidth - 0.5) * 20;
+            const y = (e.clientY / window.innerHeight - 0.5) * 20;
+            
+            gridBg.style.transform = `translate(${x}px, ${y}px)`;
+        });
+    </script>
+</body>
+</html>
