@@ -240,3 +240,23 @@ function typeEffect() {
 }
 
 typeEffect();
+
+
+// Search button 🔍 functionality
+<script>
+  function performSearch() {
+    const query = document.getElementById('searchInput').value.trim();
+    if (query) {
+      // Replace this with actual search logic or redirect
+      alert("You searched for: " + query);
+      // Or: window.location.href = `/search?q=${encodeURIComponent(query)}`;
+    }
+  }
+
+  // Optional: Trigger search on Enter key
+  document.getElementById("searchInput").addEventListener("keydown", function(event) {
+    if (event.key === "Enter") {
+      performSearch();
+    }
+  });
+</script>
