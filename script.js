@@ -182,3 +182,61 @@
                 this.style.transform = 'translateY(0) scale(1)';
             });
         });
+
+
+// Placeholder typing animation 
+const placeholders = [
+  "Search CSS hover effects...",
+  "Find beautiful text styles...",
+  "Explore HTML templates...",
+  "Need a JavaScript snippet?",
+  "Looking for responsive layout?",
+  "Try a new background animation...",
+  "Find a C++ code example...",
+  "Search for Python tricks...",
+  "Explore Java projects...",
+  "Build your portfolio site...",
+  "Get Node.js API code...",
+  "Style with Tailwind CSS...",
+  "Find Bootstrap components...",
+  "Need help with React code?",
+  "Search web tools and converters...",
+  "Discover frontend design ideas...",
+  "Explore full-stack project guides...",
+  "Learn GitHub deployment...",
+  "Find SEO meta tag tips...",
+  "Get AdSense-friendly templates..."
+];
+
+let index = 0;
+let charIndex = 0;
+let isDeleting = false;
+const inputField = document.getElementById("searchInput");
+
+function typeEffect() {
+  const current = placeholders[index];
+  let displayedText = current.substring(0, charIndex);
+
+  inputField.setAttribute("placeholder", displayedText);
+
+  if (!isDeleting) {
+    if (charIndex < current.length) {
+      charIndex++;
+    } else {
+      isDeleting = true;
+      setTimeout(typeEffect, 1000); // Pause before deleting
+      return;
+    }
+  } else {
+    if (charIndex > 0) {
+      charIndex--;
+    } else {
+      isDeleting = false;
+      index = (index + 1) % placeholders.length;
+    }
+  }
+
+  setTimeout(typeEffect, isDeleting ? 70 : 120); // Typing/deleting speed
+}
+
+typeEffect();
