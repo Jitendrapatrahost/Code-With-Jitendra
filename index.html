@@ -1,40 +1,237 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Code With Jitendra</title>
-  <link rel="stylesheet" href="style.css"/>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code With Jitendra - Programming Resource Hub</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <div class="container">
-      <h1>Code With Jitendra</h1>
-      <nav>
-        <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">Tutorials</a></li>
-          <li><a href="#">Projects</a></li>
-          <li><a href="#">Contact</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+    <header>
+        <nav class="container">
+            <div class="mobile-menu" id="mobileMenuBtn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <a href="#" class="logo">Code With Jitendra</a>
+            <ul class="nav-links">
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#css" class="nav-link">CSS</a></li>
+                <li><a href="#javascript" class="nav-link">JavaScript</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#tutorials" class="nav-link">Tutorials</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
-  <main>
-    <section class="hero">
-      <h2>Welcome to Code With Jitendra</h2>
-      <p>Learn web development, explore projects, and grow your skills!</p>
-      <button onclick="showAlert()">Get Started</button>
-    </section>
-  </main>
+    <!-- Sidebar -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <a href="#" class="sidebar-logo">Code With Jitendra</a>
+        </div>
+        <nav class="sidebar-nav">
+            <div class="sidebar-section">
+                <h3 class="sidebar-section-title">Main Navigation</h3>
+                <ul class="sidebar-links">
+                    <li><a href="#home" class="sidebar-link active">
+                        <span class="sidebar-icon">🏠</span>Home
+                    </a></li>
+                    <li><a href="#resources" class="sidebar-link">
+                        <span class="sidebar-icon">📚</span>Resources
+                    </a></li>
+                    <li><a href="#projects" class="sidebar-link">
+                        <span class="sidebar-icon">💼</span>Projects
+                    </a></li>
+                    <li><a href="#tutorials" class="sidebar-link">
+                        <span class="sidebar-icon">🎓</span>Tutorials
+                    </a></li>
+                </ul>
+            </div>
+            
+            <div class="sidebar-section">
+                <h3 class="sidebar-section-title">CSS Resources</h3>
+                <ul class="sidebar-links">
+                    <li><a href="#css-properties" class="sidebar-link">
+                        <span class="sidebar-icon">🎨</span>CSS Properties
+                    </a></li>
+                    <li><a href="#animations" class="sidebar-link">
+                        <span class="sidebar-icon">✨</span>Animations
+                    </a></li>
+                    <li><a href="#flexbox" class="sidebar-link">
+                        <span class="sidebar-icon">📐</span>Flexbox Guide
+                    </a></li>
+                    <li><a href="#grid" class="sidebar-link">
+                        <span class="sidebar-icon">▦</span>CSS Grid
+                    </a></li>
+                    <li><a href="#responsive" class="sidebar-link">
+                        <span class="sidebar-icon">📱</span>Responsive Design
+                    </a></li>
+                </ul>
+            </div>
+            
+            <div class="sidebar-section">
+                <h3 class="sidebar-section-title">JavaScript</h3>
+                <ul class="sidebar-links">
+                    <li><a href="#js-basics" class="sidebar-link">
+                        <span class="sidebar-icon">📝</span>JS Basics
+                    </a></li>
+                    <li><a href="#es6" class="sidebar-link">
+                        <span class="sidebar-icon">🆕</span>ES6+ Features
+                    </a></li>
+                    <li><a href="#dom" class="sidebar-link">
+                        <span class="sidebar-icon">🌐</span>DOM Manipulation
+                    </a></li>
+                    <li><a href="#async" class="sidebar-link">
+                        <span class="sidebar-icon">⚡</span>Async JavaScript
+                    </a></li>
+                </ul>
+            </div>
+            
+            <div class="sidebar-section">
+                <h3 class="sidebar-section-title">Frameworks</h3>
+                <ul class="sidebar-links">
+                    <li><a href="#react" class="sidebar-link">
+                        <span class="sidebar-icon">⚛️</span>React
+                    </a></li>
+                    <li><a href="#vue" class="sidebar-link">
+                        <span class="sidebar-icon">💚</span>Vue.js
+                    </a></li>
+                    <li><a href="#angular" class="sidebar-link">
+                        <span class="sidebar-icon">🅰️</span>Angular
+                    </a></li>
+                </ul>
+            </div>
+            
+            <div class="sidebar-section">
+                <h3 class="sidebar-section-title">Tools & Others</h3>
+                <ul class="sidebar-links">
+                    <li><a href="#tools" class="sidebar-link">
+                        <span class="sidebar-icon">🛠️</span>Dev Tools
+                    </a></li>
+                    <li><a href="#snippets" class="sidebar-link">
+                        <span class="sidebar-icon">📋</span>Code Snippets
+                    </a></li>
+                    <li><a href="#cheatsheet" class="sidebar-link">
+                        <span class="sidebar-icon">📄</span>Cheat Sheets
+                    </a></li>
+                    <li><a href="#contact" class="sidebar-link">
+                        <span class="sidebar-icon">📞</span>Contact
+                    </a></li>
+                </ul>
+            </div>
+        </nav>
+    </aside>
 
-  <footer>
-    <div class="container">
-      <p>&copy; 2025 Code With Jitendra. All rights reserved.</p>
-    </div>
-  </footer>
+    <main>
+        <section class="hero container" id="home">
+            <h1>Welcome to Code With Jitendra</h1>
+            <p>Your ultimate resource hub for CSS properties, animations, programming languages, and web development projects</p>
+            <a href="#resources" class="cta-button">Explore Resources</a>
+        </section>
 
-  <script src="script.js"></script>
+        <div class="container">
+            <div class="search-container">
+                <input type="text" class="search-bar" placeholder="Search for CSS properties, animations, or programming concepts..." id="searchInput">
+            </div>
+
+            <section class="content-section" id="resources">
+                <h2 class="section-title">Resource Categories</h2>
+                <div class="resource-grid">
+                    <div class="resource-card">
+                        <h3>CSS Properties</h3>
+                        <p>Comprehensive guide to all CSS properties with examples and browser compatibility</p>
+                        <a href="#css-properties" class="resource-btn">Explore CSS</a>
+                    </div>
+                    <div class="resource-card">
+                        <h3>Animations & Effects</h3>
+                        <p>Stunning CSS animations, hover effects, and interactive elements</p>
+                        <a href="#animations" class="resource-btn">View Animations</a>
+                    </div>
+                    <div class="resource-card">
+                        <h3>JavaScript</h3>
+                        <p>Modern JavaScript concepts, ES6+ features, and practical examples</p>
+                        <a href="#javascript-section" class="resource-btn">Learn JS</a>
+                    </div>
+                    <div class="resource-card">
+                        <h3>React</h3>
+                        <p>React components, hooks, and modern development patterns</p>
+                        <a href="#react-section" class="resource-btn">Explore React</a>
+                    </div>
+                    <div class="resource-card">
+                        <h3>Projects</h3>
+                        <p>Complete projects with source code and step-by-step tutorials</p>
+                        <a href="#projects-section" class="resource-btn">View Projects</a>
+                    </div>
+                    <div class="resource-card">
+                        <h3>Design Patterns</h3>
+                        <p>UI/UX patterns, responsive design, and modern web layouts</p>
+                        <a href="#design-section" class="resource-btn">Design Patterns</a>
+                    </div>
+                </div>
+            </section>
+
+            <section class="content-section" id="css-showcase">
+                <h2 class="section-title">CSS Animation Showcase</h2>
+                <p>Hover over the boxes below to see different animation effects:</p>
+                <div class="animation-demo">
+                    <div class="demo-box">Bounce</div>
+                    <div class="demo-box rotate-demo">Rotate</div>
+                    <div class="demo-box scale-demo">Scale</div>
+                    <div class="demo-box glow-demo">Glow</div>
+                </div>
+            </section>
+
+            <section class="content-section" id="code-examples">
+                <h2 class="section-title">Featured Code Examples</h2>
+                <div class="code-example">
+                    <pre><code>/* Modern CSS Grid Layout */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+}
+
+/* Smooth Hover Animation */
+.card:hover {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}</code></pre>
+                </div>
+            </section>
+
+            <section class="content-section" id="quick-links">
+                <h2 class="section-title">Quick Access</h2>
+                <div class="resource-grid">
+                    <div class="resource-card">
+                        <h3>CSS Flexbox Guide</h3>
+                        <p>Master flexbox with interactive examples</p>
+                        <a href="#flexbox" class="resource-btn">Learn Flexbox</a>
+                    </div>
+                    <div class="resource-card">
+                        <h3>CSS Grid Guide</h3>
+                        <p>Complete CSS Grid tutorial with real-world examples</p>
+                        <a href="#grid" class="resource-btn">Master Grid</a>
+                    </div>
+                    <div class="resource-card">
+                        <h3>Responsive Design</h3>
+                        <p>Media queries and mobile-first design principles</p>
+                        <a href="#responsive" class="resource-btn">Go Responsive</a>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Code With Jitendra. All rights reserved. | Building the future of web development education</p>
+        </div>
+    </footer>
+    <script src="script.js"></script>
 </body>
 </html>
